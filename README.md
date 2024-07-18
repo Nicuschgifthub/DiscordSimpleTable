@@ -50,3 +50,6 @@ You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
 ```
 
 ![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example2.png)
+
+The best thing is that the rows and columns will have good spaceing no matter which word on name is longer etc.
+Quick Note for Discord.js really long rows are not the best option as they differ from devices.
