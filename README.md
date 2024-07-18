@@ -1,7 +1,4 @@
 # SimpleTable
-<<<<<<< HEAD
-
-In Progress
 
 Can be used for Discord to make tables
 
@@ -20,11 +17,11 @@ Can be used for Discord to make tables
   ];
 
   const tableString = await new SimpleTable(columns)
-    .setJsonArrayInputs(data)
-    .setStringOffset(2)
-    .addVerticalBar()
-    .addIndex(1)
-    .build();
+    .setJsonArrayInputs(data) // defines the data
+    .setStringOffset(2) // adds an offset to the words like 2 means "Username  Bucket Size"
+    .addVerticalBar() // adds an vertical Bar
+    .addIndex(1) // adds a new column called index and represented as "#" counting from the input here its "1"
+    .build(); // builds the table (async)
 
   // Note .addIndex(1) needs to be called after .setJsonArrayInputs(data)
   // This will be changed later to be called without needing structure
@@ -35,31 +32,21 @@ Can be used for Discord to make tables
     .interactionResponse(interaction);
 ```
 
-This could looks like this
+This could looks like this:
 
-![Discord Table Example](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example1.png)
-=======
+![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example1.png)
 
-Can be used for Discord to make tables
 
+You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
 ```js
-const columns = [
-    { label: lang.getText('username'), key: 'name' },
-    { label: lang.getText('level'), key: 'lvl' },
-    { label: lang.getText('xp'), key: 'xp' }
-];
+//...
 
-const table = new SimpleTable(columns);
+  const tableString = await new SimpleTable(columns)
+    .setJsonArrayInputs(data)
+    .setStringOffset(2)
+    .build();
 
-table.setJsonArrayInputs(data);
-table.setStringOffset(2);
-table.addVerticalBar();
-table.addIndex(1);
-
-const string = await table.build();
+//...
 ```
 
-The this looks like this
-
-
->>>>>>> 5089539425218e25d55dde28887acdf90d583e6e
+![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example2.png)
