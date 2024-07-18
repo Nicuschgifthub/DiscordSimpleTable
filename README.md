@@ -34,7 +34,7 @@ Can be used for Discord to make tables
 
 This could looks like this:
 
-![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example1.png)
+![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example.png)
 
 
 You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
