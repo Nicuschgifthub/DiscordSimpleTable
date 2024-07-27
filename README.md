@@ -1,10 +1,10 @@
-# SimpleTable by Nicusch
+# DiscordSimpletable by Nicusch
 
 Can be used for Discord to make tables
 
 ```js
   // Other imports...
-  const { SimpleTable } = require('../models/SimpleTable');
+  const { DiscordSimpletable } = require('../models/DiscordSimpletable');
 
   const data = [
     { name: "Nicusch", sizetype: "Big", count: 20 },
@@ -19,7 +19,7 @@ Can be used for Discord to make tables
     { label: 'Count', key: 'count' }
   ];
 
-  const tableString = await new SimpleTable(columns)
+  const tableString = await new DiscordSimpletable(columns)
     .setJsonArrayInputs(data) // defines the data
     .setStringOffset(2) // adds an offset to the words like 2 means "Username  Bucket Size"
     .addVerticalBar() // adds an vertical Bar
@@ -38,14 +38,14 @@ Can be used for Discord to make tables
 
 This could looks like this:
 
-![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example.png)
+![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/DiscordSimpletable/master/images/example.png)
 
 
 You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
 ```js
 //...
 
-  const tableString = await new SimpleTable(columns)
+  const tableString = await new DiscordSimpletable(columns)
     .setJsonArrayInputs(data)
     .setStringOffset(2)
     .build();
@@ -53,7 +53,7 @@ You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
 //...
 ```
 
-![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/SimpleTable/master/images/example2.png)
+![Discord Table Example1](https://raw.githubusercontent.com/Nicuschgifthub/DiscordSimpletable/master/images/example2.png)
 
 The best thing is that the rows and columns will have good spaceing no matter which word on name is longer etc.
 Quick Note for Discord.js really long rows are not the best option as they differ from devices.

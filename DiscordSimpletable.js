@@ -1,4 +1,4 @@
-class SimpleTable {
+class DiscordSimpleTable {
     constructor(columns) {
         this._columns = columns;
         this._stringOffset = 0;
@@ -109,4 +109,4 @@ class SimpleTable {
 }
 
 
-module.exports = { SimpleTable };
+module.exports = { DiscordSimpleTable };
