@@ -1,4 +1,3 @@
-
 class SimpleTable {
     constructor(columns) {
         this._columns = columns;
