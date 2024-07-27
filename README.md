@@ -4,7 +4,7 @@ Can be used for Discord to make tables
 
 ```js
   // Other imports...
-  const { DiscordSimpleTable } = require('discord-simpletable');
+  const DiscordSimpleTable = require('discord-simpletable');
 
   const data = [
     { name: "Nicusch", sizetype: "Big", count: 20 },

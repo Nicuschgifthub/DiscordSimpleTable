@@ -7,12 +7,12 @@ class DiscordSimpleTable {
         this._verticalBar = false;
     }
 
-     setStringOffset(offset = 2) {
+    setStringOffset(offset = 2) {
         this._stringOffset = offset;
         return this;
     }
 
-     addIndex(startValue = 1) {
+    addIndex(startValue = 1) {
         this._items = this._items.map((item, index) => {
             return { ...item, index: startValue + index };
         });
@@ -23,7 +23,7 @@ class DiscordSimpleTable {
         return this;
     }
 
-     setJsonArrayInputs(jsonArray) {
+    setJsonArrayInputs(jsonArray) {
         jsonArray.forEach((row) => this._items.push(row));
 
         if (jsonArray.length > 0) {
@@ -42,7 +42,7 @@ class DiscordSimpleTable {
         return this;
     }
 
-    updateWidthForKeys() {
+    _updateWidthForKeys() {
         for (let key in this._widthForKeys) {
             const maxLength = Math.max(
                 ...this._items.map(item => item[key].toString().length)
@@ -62,7 +62,7 @@ class DiscordSimpleTable {
         return string + ' '.repeat(spacesToAdd);
     }
 
-    makeTopHeader() {
+    _makeTopHeader() {
         let header = "`";
 
         this._columns.forEach(element => {
@@ -82,7 +82,7 @@ class DiscordSimpleTable {
         return header;
     }
 
-    makeEntries() {
+    _makeEntries() {
         let string = "";
 
         this._items.forEach(dataItem => {
@@ -101,14 +101,14 @@ class DiscordSimpleTable {
     }
 
     build() {
-        this.updateWidthForKeys();
+        this._updateWidthForKeys();
 
-        let string = this.makeTopHeader();
-        string += this.makeEntries();
+        let string = this._makeTopHeader();
+        string += this._makeEntries();
 
         return string;
     }
 }
 
 
-module.exports = { DiscordSimpleTable };
+module.exports = DiscordSimpleTable ;
