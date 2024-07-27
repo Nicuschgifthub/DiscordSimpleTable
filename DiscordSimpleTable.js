@@ -7,11 +7,11 @@ class DiscordSimpleTable {
         this._verticalBar = false;
     }
 
-    async setStringOffset(offset = 2) {
+     setStringOffset(offset = 2) {
         this._stringOffset = offset;
     }
 
-    async addIndex(startValue = 1) {
+     addIndex(startValue = 1) {
         this._items = this._items.map((item, index) => {
             return { ...item, index: startValue + index };
         });
@@ -22,7 +22,7 @@ class DiscordSimpleTable {
         return this;
     }
 
-    async setJsonArrayInputs(jsonArray) {
+     setJsonArrayInputs(jsonArray) {
         jsonArray.forEach((row) => this._items.push(row));
 
         if (jsonArray.length > 0) {
@@ -98,7 +98,7 @@ class DiscordSimpleTable {
         return string;
     }
 
-    async build() {
+    build() {
         this.updateWidthForKeys();
 
         let string = this.makeTopHeader();
