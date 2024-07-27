@@ -1,8 +1,11 @@
-# SimpleTable
+# SimpleTable by Nicusch
 
 Can be used for Discord to make tables
 
 ```js
+  // Other imports...
+  const { SimpleTable } = require('../models/SimpleTable');
+
   const data = [
     { name: "Nicusch", sizetype: "Big", count: 20 },
     { name: "Noner", sizetype: "Medium", count: 13 },
@@ -20,10 +23,11 @@ Can be used for Discord to make tables
     .setJsonArrayInputs(data) // defines the data
     .setStringOffset(2) // adds an offset to the words like 2 means "Username  Bucket Size"
     .addVerticalBar() // adds an vertical Bar
-    .addIndex(1) // adds a new column called index and represented as "#" counting from the input here its "1"
+    .addIndex(1) // adds a new column called index and represented as "#" the argumnet "1" defines the start count like 1,2,3,...
     .build(); // builds the table (async)
 
   // Note .addIndex(1) needs to be called after .setJsonArrayInputs(data)
+  // Reason is that .addIndex(param) is the function which adds another data entry. Otherwise .setJsonArrayInputs(data) would replace the entire data
   // This will be changed later to be called without needing structure
 
   new Embed()
