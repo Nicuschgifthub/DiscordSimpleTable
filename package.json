@@ -1,7 +1,7 @@
 {
     "name": "simpletable",
     "version": "1.0.2",
-    "description": "A SimpleTable Build for Discord.js",
+    "description": "A SimpleTable builder for Discord.js",
     "main": "SimpleTable.js",
     "publishConfig": {
         "access": "public"
