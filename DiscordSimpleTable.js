@@ -9,6 +9,7 @@ class DiscordSimpleTable {
 
      setStringOffset(offset = 2) {
         this._stringOffset = offset;
+        return this;
     }
 
      addIndex(startValue = 1) {
@@ -38,6 +39,7 @@ class DiscordSimpleTable {
 
     addVerticalBar(add = true) {
         this._verticalBar = add;
+        return this;
     }
 
     updateWidthForKeys() {
