@@ -19,7 +19,7 @@ Can be used for Discord to make tables
     { label: 'Count', key: 'count' }
   ];
 
-  const tableString = await new DiscordSimpleTable(columns)
+  const tableString = new DiscordSimpleTable(columns)
     .setJsonArrayInputs(data) // defines the data
     .setStringOffset(2) // adds an offset to the words like 2 means "Username  Bucket Size"
     .addVerticalBar() // adds an vertical Bar
@@ -45,7 +45,7 @@ You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
 ```js
 //...
 
-  const tableString = await new DiscordSimpleTable(columns)
+  const tableString = new DiscordSimpleTable(columns)
     .setJsonArrayInputs(data)
     .setStringOffset(2)
     .build();
