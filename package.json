@@ -1,9 +1,17 @@
 {
     "name": "discord-simpletable",
-    "version": "1.0.3",
+    "version": "1.1.4",
     "description": "A DiscordSimpleTable builder for Discord.js",
     "main": "DiscordSimpleTable.js",
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "keywords": [
+        "SimpleTable",
+        "Discord.js",
+        "DC",
+        "table",
+        "tablebuilder",
+        "tablemaker"
+    ]
 }
