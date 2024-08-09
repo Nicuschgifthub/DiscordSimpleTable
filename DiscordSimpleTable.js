@@ -14,6 +14,8 @@ class DiscordSimpleTable {
         this._verticalBar = false;
         this._spaceString = spaceString;
         this._indexLabel = '#';
+
+        this._indexStartValue = null;
     }
 
     /**
@@ -42,13 +44,7 @@ class DiscordSimpleTable {
      * @returns {DiscordSimpleTable} The current instance for chaining.
      */
     addIndex(startValue = 1) {
-        this._items = this._items.map((item, index) => {
-            return { ...item, index: startValue + index };
-        });
-
-        this._columns.unshift({ label: this._indexLabel, key: 'index' });
-        this._widthForKeys['index'] = 0;
-
+        this._indexStartValue = startValue;
         return this;
     }
 
@@ -166,10 +162,28 @@ class DiscordSimpleTable {
     }
 
     /**
+    * Adds an index column to the beginning of the table.
+    * @returns {void} This method does not return a value.
+    */
+    _addIndex() {
+        this._items = this._items.map((item, index) => {
+            return { ...item, index: this._indexStartValue + index };
+        });
+
+        this._columns.unshift({ label: this._indexLabel, key: 'index' });
+        this._widthForKeys['index'] = 0;
+        return;
+    }
+
+    /**
      * Builds the complete table as a string.
      * @returns {string} The formatted table as a string.
      */
     build() {
+        if (this._indexStartValue !== null) {
+            this._addIndex();
+        }
+
         this._updateWidthForKeys();
 
         let string = this._makeTopHeader();
