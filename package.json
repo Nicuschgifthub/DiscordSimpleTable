@@ -1,6 +1,6 @@
 {
     "name": "discord-simpletable",
-    "version": "1.1.5",
+    "version": "0.0.0",
     "description": "A DiscordSimpleTable builder for Discord.js",
     "main": "DiscordSimpleTable.js",
     "publishConfig": {
