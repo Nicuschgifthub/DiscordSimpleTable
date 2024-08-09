@@ -7,11 +7,12 @@
         "access": "public"
     },
     "keywords": [
+        "tablebuilder",
         "SimpleTable",
         "Discord.js",
-        "DC",
+        "tablemaker",
+        "Discord",
         "table",
-        "tablebuilder",
-        "tablemaker"
+        "DC"
     ]
 }
