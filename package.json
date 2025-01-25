@@ -1,6 +1,7 @@
 {
     "name": "discord-simpletable",
     "version": "0.0.0",
+    "author": "Nicusch | Nixkuchen",
     "description": "A DiscordSimpleTable builder for Discord.js",
     "main": "DiscordSimpleTable.js",
     "publishConfig": {
@@ -13,6 +14,10 @@
         "tablemaker",
         "Discord",
         "table",
-        "DC"
+        "tables",
+        "DC",
+        "list",
+        "user-list",
+        "Dicord-Tables"
     ]
 }
