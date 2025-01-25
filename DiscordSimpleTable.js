@@ -192,6 +192,6 @@ class DiscordSimpleTable {
         return string;
     }
 }
-
+// Made by Nicusch for everyone out there who just wants to create simple, good-looking tables without figuring it out themselves.
 
 module.exports = DiscordSimpleTable;
