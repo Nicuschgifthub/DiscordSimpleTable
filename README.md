@@ -1,6 +1,6 @@
 # DiscordSimpleTable by Nicusch
 
-DiscordSimpleTable provides a way to create and format tables for display in Discord messages.
+DiscordSimpleTable provides a way to create and format tables for Emebed messages in Discord.
 It allows customization of column headers, row data, and table appearance,
 including options for adding index columns and vertical bars.
 
@@ -31,14 +31,14 @@ const tableString = new DiscordSimpleTable(columns)
 // "const tableString" is now ready to be used
 // as an example in Discord.js Api
 
-new Embed()
-  .setColor(config.embeds.colors.info)
-  .setDescription(tableString)
-  .interactionResponse(interaction);
+const { EmbedBuilder } = require('discord.js'); // Import the EmbedBuilder
 
-// Note Embed is my own custom class
+const exampleEmbed = new EmbedBuilder()
+	.setColor(0x0099FF) // Set your color
+	.setTitle('Discord Simple Table') // Set your title
+	.setDescription(tableString) // use our new custom made table
 ```
-As an Discord Embed it looks like this:
+Final Discord Embed:
 
 ![discord-simpletable](https://raw.githubusercontent.com/Nicuschgifthub/DiscordSimpleTable/master/images/1.png)
 
@@ -51,6 +51,8 @@ You can also leave out the ".addVerticalBar()" and ".addIndex(1)"
     .setJsonArrayInputs(data)
     .setStringOffset(2)
     .build();
+
+    // Note: .setIndexLabel('#') can also be removed since it wont be added when no .addIndex(1) exists
 
 //...
 ```
@@ -69,7 +71,7 @@ Example to change empty space to '-'
 //...
 ```
 
-## Install
+## Easy Install
 ```bash
 npm install discord-simpletable
 ```
@@ -92,7 +94,7 @@ const columns = [
 
 const tableString = new DiscordSimpleTable(columns)
   .setJsonArrayInputs(data)
-  .setStringOffset(1) // only using one space looks stupid.
+  .setStringOffset(1) // only using one space
   .build();
 
 ```
